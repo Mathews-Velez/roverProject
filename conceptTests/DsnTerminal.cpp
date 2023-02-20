@@ -35,17 +35,20 @@ void loadingBar()
     std::string progress_arrow = "[=>";
     for (int i = 0; i < screen_width; i++)
     {
-        usleep(15000);
-        system("clear");
-        progress_arrow.pop_back();
-        progress_arrow.pop_back();
-        progress_arrow += "=>]";
+        printf("\e[?25l");
         printf("\n\n\n\n\n\n\n\n\n");
         centerOutput("Loading");
         printf("\n\n\n\n");
         std::cout << progress_arrow;
         printf("\n");
+        usleep(15000);
+        system("clear");
+        progress_arrow.pop_back();
+        progress_arrow.pop_back();
+        progress_arrow += "=>]";
+        
     }
+    printf("\e[?25h");
 }
 
 int main()
