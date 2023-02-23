@@ -33,6 +33,8 @@ void loadingBar()
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     int screen_width = w.ws_col-3;
     std::string progress_arrow = "[=>";
+    //generate the empty progress bar
+    
     for (int i = 0; i < screen_width; i++)
     {
         printf("\e[?25l");
@@ -46,7 +48,6 @@ void loadingBar()
         progress_arrow.pop_back();
         progress_arrow.pop_back();
         progress_arrow += "=>]";
-        
     }
     printf("\e[?25h");
 }
@@ -63,7 +64,5 @@ int main()
         loadingBar();
         return false;
     }
-    // printf("Establishing a connection....\n");
-    // }
     return 0;
 }
