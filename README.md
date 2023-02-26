@@ -1,0 +1,1 @@
+This was supposed to be a quick and simple game about controlling a rover, but I have definitely made it to be a bit more. Will add more to this when I find out more about what this is becoming. If nothing else, a demonstration of my willingness to learn new things while having fun with it
