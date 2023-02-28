@@ -48,35 +48,21 @@ void loadingBar()
     std::string progress_bar = "[=";
 
     // generate the empty progress bar
-    for (int i = 0; i < screen_width - 2; i++)
+    for (int i = 0; i < screen_width - 3; i++)
     {
         progress_bar += " ";
     }
     progress_bar += "]";
 
-    //first progress bar version
-    // for (int i = 0; i < screen_width - 3; i++)
-    // {
-    //     centerOutput("Loading");
-    //     printf("\n\n\n\n");
-    //     std::cout << progress_arrow;
-    //     printf("\n");
-    //     usleep(15000);
-    //     system("clear");
-    //     progress_arrow.pop_back();
-    //     progress_arrow.pop_back();
-    //     progress_arrow += "=>]";
-    // }
-
-    for (int i = 1; i < progress_bar.size() - 1; i++){
+    for (int i = 1; i < screen_width - 3; i++){
         centerOutput("Loading");
         printf("\n\n\n\n");
-        progress_bar[i] = '=>';
+        progress_bar[i] = '=';
+        progress_bar[i+1] = '>';
         std::cout << progress_bar;
         printf("\n");
         usleep(15000);
         system("clear");
-        progress_bar.pop_back();
     }
 
     printf("\e[?25h");
